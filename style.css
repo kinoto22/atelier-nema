@@ -375,7 +375,7 @@ h3 {
 }
 
 .about-image {
-    width: 490px;
+    /* width: 490px; */
     height: 320px;
     border-radius: 20px;
     filter: brightness(1.7);
@@ -393,7 +393,9 @@ h3 {
     background-color: #ccd7fc;
 }
 
-.contact-form {
+
+
+.form-area {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
@@ -401,6 +403,7 @@ h3 {
 
 .form-row {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1.2em;
 }
@@ -413,6 +416,8 @@ h3 {
     padding-top: 0.4em;
     font-weight: bold;
     flex-shrink: 0;
+    align-items: center;
+
     white-space: nowrap;
     /* ラベル内の改行を防ぐ */
 }
@@ -429,7 +434,7 @@ h3 {
 
 .form-row input,
 .form-row textarea {
-    flex: 1;
+    width: 400px;
     padding: 0.5em;
     font-size: 1em;
     border: none;
@@ -543,6 +548,15 @@ button {
 /* ヘッダー -----------レスポンシブ------スマホ---------------*/
 @media screen and (max-width: 768px) {
 
+
+    .section {
+        width: 100%;
+        overflow: hidden;
+        /* セクション内のはみ出し防止 */
+    }
+
+
+
     .section-title {
 
         font-size: 2rem;
@@ -552,7 +566,9 @@ button {
     .section-inner {
         padding-left: 20px;
         padding-right: 20px;
-        max-width: 768px;
+        /* max-width: 768px; */
+        max-width: 100%;
+
         margin: 0 auto;
     }
 
@@ -589,6 +605,8 @@ button {
         margin-top: 1rem;
         font-size: 0.8rem;
     }
+
+
 
     .hero-copy {
         transform: scale(0.7);
@@ -646,6 +664,49 @@ button {
     .contact-form {
         padding: 0 20px;
     }
+
+    .form-area {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row label {
+        width: 160px;
+        display: flex;
+        font-weight: bold;
+        flex-shrink: 0;
+        white-space: nowrap;
+        margin-bottom: 0.2rem;
+    }
+
+    .form-row label {
+        gap: 10px;
+        justify-content: left;
+        padding-top: 0.4em;
+        font-weight: bold;
+        flex-shrink: 0;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .form-row input,
+    .form-row textarea {
+        /* width: 100%; */
+        margin-left: 0;
+
+    }
+
+    .form-row textarea {
+        resize: none;
+        min-height: 120px;
+    }
+
+
+
 
     /* フッター  -----------レスポンシブ-----スマホ----------------*/
     .footer-top {
@@ -705,5 +766,11 @@ button {
 
     .footer-top {
         padding: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .photo-box {
+        min-width: 350px;
     }
 }
