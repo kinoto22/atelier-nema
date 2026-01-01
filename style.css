@@ -10,10 +10,9 @@
     box-sizing: border-box;
 }
 
-/* ベーススタイル（全体の基準を整える） */
 html {
     font-size: 100%;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,8 +22,6 @@ body {
     line-height: 1.5;
 }
 
-/* アクセシビリティ・セマンティクス補助 */
-/* 画像が親要素より大きくなるのを防ぐ */
 img {
     max-width: 100%;
     height: auto;
@@ -33,19 +30,14 @@ img {
 
 img[loading="lazy"] {
     background-color: #ccd7fc;
-    /* サイトに合わせて変更 */
-    /* aspect-ratio: 4 / 3;     画像に合わせて変更 */
     object-fit: cover;
-    /* 必要に応じて調整 */
 }
-
 
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* 中央揃え共通 */
 .align-center {
     text-align: center
 }
@@ -62,10 +54,8 @@ a {
 .site-header {
     padding: 20px 0;
     background-color: #ccd7fc;
-
 }
 
-/*headerとfooter内のロゴ＋ナビメニュー+ボタン */
 .header-inner {
     max-width: 1440px;
     height: 110px;
@@ -110,46 +100,41 @@ a {
 
 nav a:hover {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    /* ほんのり立体感 */
 }
 
 .shop-button {
-    padding: 4px 16px;
+    padding: 6px 20px;
     background-color: #d2efd4;
     color: #14256c;
     border-radius: 20px;
     white-space: nowrap;
     display: inline-block;
     transition: background-color 0.3s ease;
+    letter-spacing: 0.1em;
+    font-weight: 500;
 }
-
 
 .shop-button:hover,
 button:hover {
     background-color: #ccf6cf;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    /* ほんのり立体感 */
 }
 
 /* －－ファーストビュー－－－－－－－－－－－－－－－－－－－－－－－－－ */
 .hero {
-    padding: 0 0 100px;
+    padding: 80px 10px 0px;
     text-align: center;
     background-color: #ccd7fc;
-
+    min-height: 100svh;
 }
 
-/* スライドの枠（レスポンシブ＋アスペクト比保持） */
 .photo-box {
     position: relative;
-    width: 70%;
     max-width: 1000px;
-    min-width: 440px;
     aspect-ratio: 100 / 49;
-    /*  横100:縦49 の比率を保つ */
     margin: 0 auto;
-    border-radius: 20vw;
-    /*  自動で丸み調整（大きすぎたらpxに調整も可） */
+    /* border-radius: 25vw; */
+    border-radius: 9999px;
     overflow: visible;
     background-color: #ccd7fc;
 }
@@ -157,8 +142,7 @@ button:hover {
 /*  スライド画像共通設定 */
 .photo-box img {
     position: absolute;
-    /* top: 0;
-    left: 0; */
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -237,7 +221,7 @@ button:hover {
 .section {
     width: 100%;
     margin: 0 auto;
-    padding-top: 100px;
+    padding: 100px 0 150px;
 }
 
 .section-inner {
@@ -248,7 +232,6 @@ button:hover {
 }
 
 /* プロダクト セクション -----------------------------------*/
-/* プロダクトセクションの調整 */
 
 .section--product {
     background-color: white;
@@ -323,7 +306,6 @@ h3 {
 .center-shop-button {
     text-align: center;
     margin-top: 6px;
-    padding-bottom: 160px;
 }
 
 /* コンセプト セクション----------------------------------- */
@@ -331,7 +313,7 @@ h3 {
 .section--concept {
     background-color: #ccd7fc;
     width: 100%;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
 }
 
 .concept-block {
@@ -361,8 +343,6 @@ h3 {
 /* アバウトセクションの調整 */
 .section--about {
     background-color: white;
-    padding-top: 100px;
-    padding-bottom: 140px;
     width: 100%;
 }
 
@@ -370,7 +350,6 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 60px;
-    margin-bottom: 100px;
     align-items: center;
 }
 
@@ -387,13 +366,10 @@ h3 {
 }
 
 /* コンタクト セクション----------------------------------- */
-/* コンタクトセクションの調整 */
+
 .section--contact {
-    padding-top: 100px;
     background-color: #ccd7fc;
 }
-
-
 
 .form-area {
     max-width: 600px;
@@ -410,14 +386,12 @@ h3 {
 
 .form-row label {
     width: 160px;
-    /* ラベルと必須マークを含めた幅 */
     display: flex;
     justify-content: space-between;
     padding-top: 0.4em;
     font-weight: bold;
     flex-shrink: 0;
     align-items: center;
-
     white-space: nowrap;
     /* ラベル内の改行を防ぐ */
 }
@@ -447,7 +421,7 @@ h3 {
     min-height: 120px;
 }
 
-/* フォームボタンサンプル */
+/* フォーム送信ボタン */
 button {
     cursor: pointer;
     font: inherit;
@@ -456,15 +430,16 @@ button {
     display: inline-block;
 }
 
-/* ショップボタンコピー */
+/* 送信ボタン */
 button {
-    padding: 5px 80px;
+    padding: 6px 80px;
     background-color: #d2efd4;
     color: #14256c;
     border-radius: 20px;
     white-space: nowrap;
     display: inline-block;
     margin-top: 0.8rem;
+    font-weight: 500;
 }
 
 /* フッター セクション----------------------------------- */
@@ -472,7 +447,6 @@ button {
 .site-footer {
     background-color: #b3c3f7;
     width: 100%;
-    /* padding-bottom: 10px; */
     padding: 30px 40px 10px;
     font-size: 14px;
 }
@@ -483,7 +457,6 @@ button {
     align-items: flex-start;
     flex-wrap: nowrap;
     gap: 40px;
-    padding: 0 20px;
 }
 
 .footer-social {
@@ -504,7 +477,7 @@ button {
     text-align: center;
 }
 
-/* アニメーション－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－ */
+/* アニメーション－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－ */
 /* フェードイン */
 .fade-in {
     opacity: 0;
@@ -518,7 +491,7 @@ button {
 }
 
 .fade-in.delay-1 {
-    transition-delay: 0.2s;
+    transition-delay: 0.3s;
 }
 
 .fade-in.delay-2 {
@@ -526,11 +499,11 @@ button {
 }
 
 .fade-in.delay-3 {
-    transition-delay: 0.6s;
+    transition-delay: 0.5s;
 }
 
 .fade-in.delay-4 {
-    transition-delay: 1.0s;
+    transition-delay: 0.7s;
 }
 
 @keyframes copyFadeIn {
@@ -544,7 +517,9 @@ button {
 }
 
 
-/* レスポンシブ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* レスポンシブ-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
 /* ヘッダー -----------レスポンシブ------スマホ---------------*/
 @media screen and (max-width: 768px) {
 
@@ -552,24 +527,24 @@ button {
     .section {
         width: 100%;
         overflow: hidden;
-        /* セクション内のはみ出し防止 */
+        padding: 80px 0 130px;
     }
 
+
+    .hero-copy {
+        left: 35%;
+    }
 
 
     .section-title {
-
         font-size: 2rem;
-
+        margin-bottom: 100px;
     }
 
     .section-inner {
-        padding-left: 20px;
-        padding-right: 20px;
-        /* max-width: 768px; */
-        max-width: 100%;
-
-        margin: 0 auto;
+        /* padding-left: 20px;
+        padding-right: 20px; */
+        /* max-width: 100%; */
     }
 
     .header-inner {
@@ -583,12 +558,11 @@ button {
     .logo {
         margin-left: 0;
         width: 120px;
-        /* width: clamp(120px, 30vw, 150px); */
     }
 
     .main-nav,
     .main-nav--footer {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: flex-end;
         gap: 1rem;
     }
@@ -601,23 +575,19 @@ button {
         text-align: right;
     }
 
-    .shop-button {
-        margin-top: 1rem;
-        font-size: 0.8rem;
-    }
-
-
-
     .hero-copy {
         transform: scale(0.7);
     }
 
     /* コンセプト  -----------レスポンシブ------スマホ---------------*/
 
+    .section--concept {
+        padding-bottom: 30px;
+    }
+
     .concept-block {
         flex-direction: column;
         align-items: center;
-        padding: 0 20px;
     }
 
     .right-image .concept-text {
@@ -644,7 +614,6 @@ button {
     .about-block {
         flex-direction: column;
         align-items: center;
-        padding: 0 20px;
     }
 
     .about-image {
@@ -652,7 +621,6 @@ button {
         max-width: 490px;
         height: auto;
         object-fit: cover;
-
     }
 
     .about-text {
@@ -661,12 +629,10 @@ button {
     }
 
     /* コンタクト  -----------レスポンシブ---スマホ------------------*/
-    .contact-form {
-        padding: 0 20px;
-    }
+
 
     .form-area {
-        width: 400px;
+        max-width: 400px;
         margin: 0 auto;
     }
 
@@ -695,9 +661,7 @@ button {
 
     .form-row input,
     .form-row textarea {
-        /* width: 100%; */
         margin-left: 0;
-
     }
 
     .form-row textarea {
@@ -707,13 +671,15 @@ button {
 
 
 
-
     /* フッター  -----------レスポンシブ-----スマホ----------------*/
+
+    .site-footer {
+        padding: 30px 20px 10px;
+    }
+
     .footer-top {
-        /* flex-direction: column; */
         align-items: flex-start;
         gap: 20px;
-        padding: 0 20px;
     }
 
     .footer-logo {
@@ -733,22 +699,16 @@ button {
         font-size: 1rem;
     }
 
-    .center-shop-button .shop-button {
-        margin-top: 1rem;
-        font-size: 1rem;
-    }
-
     .footer-social {
         gap: 16px;
         padding: 10px 20px;
         margin: 20px 0 20px;
-
     }
 
-
-
-
 }
+
+
+
 
 /* 768px〜1000px、中間サイズ-------------------------------- */
 /* フッターのナビメニューのフォントサイズが徐々に小さくなる */
@@ -769,8 +729,35 @@ button {
     }
 }
 
-@media screen and (max-width: 500px) {
-    .photo-box {
-        min-width: 350px;
+
+
+
+
+/* =========================
+   スマホ最小幅対策
+========================= */
+@media (max-width: 460px) {
+
+    .hero {
+        text-align: center;
+        background-color: #ccd7fc;
+        min-height: 60svh;
     }
+
+    .photo-box img {
+        object-fit: contain;
+    }
+
+    .form-row input,
+    .form-row textarea {
+        width: 100%;
+    }
+
+    .section-inner-contact {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 100%;
+    }
+
+
 }
