@@ -122,10 +122,10 @@ button:hover {
 
 /* －－ファーストビュー－－－－－－－－－－－－－－－－－－－－－－－－－ */
 .hero {
-    padding: 80px 10px 0px;
+    padding: 80px 10px 30px;
     text-align: center;
     background-color: #ccd7fc;
-    /* min-height: 100svh; */
+    min-height: 100svh;
 }
 
 .photo-box {
@@ -752,10 +752,9 @@ button {
 @media (max-width: 460px) {
 
     .hero {
-        text-align: center;
-        background-color: #ccd7fc;
-        min-height: 60svh;
+        padding: 80px 10px 0px;
     }
+
 
     .photo-box img {
         object-fit: contain;
